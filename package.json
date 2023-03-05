@@ -4,7 +4,9 @@
   "license": "MIT",
   "scripts": {},
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "get-sitemap-links": "^1.1.0"
+  },
   "devDependencies": {
     "@nrwl/esbuild": "15.8.5",
     "@nrwl/eslint-plugin-nx": "15.8.5",

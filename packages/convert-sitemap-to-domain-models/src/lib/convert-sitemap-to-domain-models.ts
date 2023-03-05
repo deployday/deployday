@@ -1,6 +1,9 @@
-export function convertSitemapToDomainModels(): string {
-  return 'convert-sitemap-to-domain-models';
-}
+import GetSitemapLinks from 'get-sitemap-links';
+
+export const convertSitemapToDomainModels = async (sitemap: string) => {
+  const array = await GetSitemapLinks(sitemap);
+  return convertURIListToCollectionsNamesList(array);
+};
 
 export const convertURIListToCollectionsNamesList = (list: string[]) => {
   const models = list.reduce<{
