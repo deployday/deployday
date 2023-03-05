@@ -1,0 +1,36 @@
+{
+  "name": "convert-sitemap-to-domain-models",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/convert-sitemap-to-domain-models/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/convert-sitemap-to-domain-models",
+        "main": "packages/convert-sitemap-to-domain-models/src/index.ts",
+        "tsConfig": "packages/convert-sitemap-to-domain-models/tsconfig.lib.json",
+        "assets": ["packages/convert-sitemap-to-domain-models/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/convert-sitemap-to-domain-models/**/*.ts"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/vite:test",
+      "outputs": ["coverage/packages/convert-sitemap-to-domain-models"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/packages/convert-sitemap-to-domain-models"
+      }
+    }
+  },
+  "tags": []
+}
