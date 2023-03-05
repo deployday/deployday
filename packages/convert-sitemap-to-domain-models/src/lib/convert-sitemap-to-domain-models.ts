@@ -22,7 +22,7 @@ export const convertURIListToCollectionsNamesList = (list: string[]) => {
         if (prev.collectionsNames.indexOf(category) === -1)
           prev.collectionsNames.push(category);
         const pageIndex = prev.pagesURIs.indexOf(page);
-        prev.pagesURIs.splice(pageIndex, 1);
+        if (pageIndex !== -1) prev.pagesURIs.splice(pageIndex, 1);
       }
       return prev;
     },
